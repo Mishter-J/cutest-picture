@@ -1,6 +1,6 @@
-"""Cutest-picture-01 entry: write the bundled picture to /output/entry.png.
+"""cutest-picture-01 resubmission: write the bundled art to /output/entry.png.
 
-The picture is the cute.png file shipped beside this program. The program
+The art is the cute.png file shipped beside this program. The program
 just copies it, so the output is byte-for-byte identical on every run.
 
 Standard library only. No network access, no randomness, no arguments.
@@ -32,10 +32,10 @@ def main() -> None:
     dest = output_dir / DEST_NAME
     shutil.copyfile(SOURCE, dest)
     # Guard against a truncated or partial copy: the output must be the
-    # exact bytes of the bundled picture.
+    # exact bytes of the bundled art.
     if _sha256(dest) != _sha256(SOURCE):
         dest.unlink(missing_ok=True)
-        raise SystemExit("entry.png does not match the bundled picture")
+        raise SystemExit("entry.png does not match the bundled art")
     print(f"wrote {dest} ({dest.stat().st_size} bytes)")
 
 
